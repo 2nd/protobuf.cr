@@ -209,7 +209,7 @@ module Protobuf
     end
 
     def enum!(enum_type)
-      puts "enum #{enum_type.name}"
+      puts "enum #{enum_type.name} : UInt8"
       unless enum_type.value.nil?
         indent do
           enum_type.not_nil!.value.not_nil!.each do |ev|
