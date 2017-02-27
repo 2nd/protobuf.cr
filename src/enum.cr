@@ -1,6 +1,6 @@
 abstract struct Enum
   def self.new(buf : Protobuf::Buffer)
-    new(buf.read_int32.not_nil!)
+    new(buf.read_int32.not_nil!.to_u8)
   end
 
   def self.from_protobuf(io : IO)
